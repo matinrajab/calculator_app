@@ -30,7 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  provider: ^6.0.5
+  get: ^4.6.5
   math_expressions: ^2.4.0
 
 
