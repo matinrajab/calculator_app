@@ -17,11 +17,12 @@ class CalculatorController extends GetxController{
   var answer = ''.obs;
 
   void calculateEval() {
-    question.value = question.replaceAll('÷', '/');
-    question.value = question.replaceAll('×', '*');
-    question.value = question.replaceAll('%', '/100');
+    String tmpQuestion = question.value;
+    tmpQuestion = tmpQuestion.replaceAll('÷', '/');
+    tmpQuestion = tmpQuestion.replaceAll('×', '*');
+    tmpQuestion = tmpQuestion.replaceAll('%', '/100');
     Parser p = Parser();
-    Expression exp = p.parse(question.value);
+    Expression exp = p.parse(tmpQuestion);
     ContextModel cm = ContextModel();
     double eval = exp.evaluate(EvaluationType.REAL, cm);
     answer.value = eval.toString();

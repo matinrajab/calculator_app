@@ -17,18 +17,13 @@ class CalculatorScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(20),
             alignment: Alignment.centerRight,
-            child: Obx(() {
-              calculatorC.question.value = calculatorC.question.replaceAll('/100', '%');
-              calculatorC.question.value = calculatorC.question.replaceAll('/', '÷');
-              calculatorC.question.value = calculatorC.question.replaceAll('*', '×');
-              return Text(
+            child: Obx(() => Text(
                 calculatorC.question.value,
                 style: const TextStyle(
                   fontSize: 20,
                   color: Colors.white,
                 ),
-              );
-            }),
+              )),
           ),
           Container(
             padding: const EdgeInsets.all(20),
